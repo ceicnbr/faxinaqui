@@ -17,14 +17,14 @@ const RegisterScreen = () => {
     <View style={styles.container}>
       <Text style={styles.title}>REGISTRO</Text>
       <Text style={styles.paragrafo}>Registre-se para encontrar suas necessidades de faxina e para descobrir todos nossos servicos</Text>
-      <Text>Email:</Text>
+      <Text style={styles.emailsenha}>Email:</Text>
       <TextInput
         style={styles.input}
         placeholder="Email"
         onChangeText={text => setEmail(text)}
         value={email}
       />
-      <Text>Senha:</Text>
+      <Text style={styles.emailsenha}>Senha:</Text>
       <TextInput
         style={styles.input}
         placeholder="Senha"
@@ -83,7 +83,11 @@ const styles = StyleSheet.create({
     marginBottom:100,
     marginTop:10,
     color:'#1F0AA3',
+  },
+  emailsenha:{
+    color:'#1F0AA3',
   }
+
 });
 
 export default RegisterScreen;
