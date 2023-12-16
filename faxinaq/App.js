@@ -1,24 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Image, Button } from 'react-native';
-import Buttone from './src/components/Main/'
-import DisplayAnImage from './src/components/imagens'
+// App.js
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
+import WelcomeScreen from './src/components/screens/WelcomeScreen';
+import LoginScreen from './src/components/screens/LoginScreen';
+import RegisterScreen from './src/components/screens/RegisterScreen';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <DisplayAnImage/>
-      <Buttone/>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Welcome">
+        <Stack.Screen name="Bem-Vindo" component={WelcomeScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#9DC6FB',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

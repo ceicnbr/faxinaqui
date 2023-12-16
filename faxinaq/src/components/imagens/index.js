@@ -3,7 +3,7 @@ import {View, Image, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 200,
+    paddingTop: 0,
     margin: 0,
     display:'flex',
     justifyContent:'flex-start',
@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 290,
     height: 304,
+    marginBottom: 100,
   },
 });
 
