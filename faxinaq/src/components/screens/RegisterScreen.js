@@ -2,34 +2,62 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import RegistrationSuccessScreen from './RegistrationSuccessScreen';
 
 const RegisterScreen = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [nome, setNome] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [endereço, setEndereço] = useState('');
 
   const handleRegisterPress = () => {
     // Lógica para processar o registro do usuário
-    // Você pode adicionar a lógica de registro aqui, por exemplo, chamando uma API, etc.
+    // Suponha que o registro seja bem-sucedido por enquanto
+    // Você pode adicionar a lógica de registro real aqui
+
+    // Navegar para a tela de registro concluído
+    navigation.navigate('RegistrationSuccess');
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>REGISTRO</Text>
-      <Text style={styles.paragrafo}>Registre-se para encontrar suas necessidades de faxina e para descobrir todos nossos servicos</Text>
-      <Text style={styles.emailsenha}>Email:</Text>
+
       <TextInput
         style={styles.input}
-        placeholder="Email"
-        onChangeText={text => setEmail(text)}
-        value={email}
+        placeholder="Nome completo"
+        onChangeText={text => setNome(text)}
+        value={nome}
       />
-      <Text style={styles.emailsenha}>Senha:</Text>
+
       <TextInput
         style={styles.input}
         placeholder="Senha"
         onChangeText={text => setPassword(text)}
         value={password}
+        secureTextEntry
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Email"
+        onChangeText={text => setEmail(text)}
+        value={email}
+        secureTextEntry
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Telefone"
+        onChangeText={text => setTelefone(text)}
+        value={telefone}
+        secureTextEntry
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Endereço"
+        onChangeText={text => setEndereço(text)}
+        value={endereço}
         secureTextEntry
       />
 
@@ -48,28 +76,25 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#9DC6FB',
-    marginTop:0,
+    backgroundColor: '#ecf0f1',
   },
   title: {
-    fontSize: 32,
+    fontSize: 24,
     marginBottom: 20,
-    color:'#1F0AA3',
   },
   input: {
     width: 200,
     height: 40,
-    borderColor: '#9DC6FB',
+    borderColor: 'gray',
     borderWidth: 1,
-    borderRadius: 15,
+    borderRadius: 8,
     paddingHorizontal: 10,
     marginBottom: 10,
-    backgroundColor:'#fff',
   },
   button: {
     width: 200,
     height: 40,
-    backgroundColor: '#403DFF',
+    backgroundColor: '#3498db',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
@@ -79,15 +104,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
   },
-  paragrafo:{
-    marginBottom:100,
-    marginTop:10,
-    color:'#1F0AA3',
-  },
-  emailsenha:{
-    color:'#1F0AA3',
-  }
-
 });
 
 export default RegisterScreen;

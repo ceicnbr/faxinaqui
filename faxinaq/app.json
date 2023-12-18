@@ -15,16 +15,20 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "We need your location for some feature."
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#9DC6FB"
+        "backgroundColor": "#9DC6FB",
+        "permissions": ["ACCESS_FINE_LOCATION"],
+        "usesPermissions": ["android.permission.ACCESS_FINE_LOCATION"]
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
     }
   }
-}
+  }}
